@@ -3,6 +3,7 @@ Tic Tac Toe Player
 """
 
 import math
+from copy import deepcopy
 
 X = "X"
 O = "O"
@@ -22,21 +23,49 @@ def player(board):
     """
     Returns player who has the next turn on a board.
     """
-    raise NotImplementedError
+    counter_x = 0
+    counter_o = 0
+
+    # Counts how many X's and O's
+    for value in board:
+        counter_x += value.count(X)
+        counter_o += value.count(O)
+    
+    if counter_x > counter_o:
+        return O
+    elif counter_x == counter_o:
+        return X
 
 
 def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    raise NotImplementedError
+    possible_moves = set()
+
+    # Finds an EMPTY slot on the board
+    for out_board in range(len(board)):
+        for in_board in range(len(board[out_board])):
+            if board[out_board][in_board] == EMPTY:
+                possible_moves.add((out_board, in_board))
+
+    return possible_moves
 
 
 def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    raise NotImplementedError
+    turn = player(board)
+    lst_board = []
+
+    # Applies every possible move on the board
+    for moves in action:
+        new_board = deepcopy(board)
+        new_board[moves[0]][moves[1]] = turn
+        lst_board.append(new_board)
+    
+    return lst_board
 
 
 def winner(board):
