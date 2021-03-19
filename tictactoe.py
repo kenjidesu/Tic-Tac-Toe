@@ -57,6 +57,7 @@ def result(board, action):
     Returns the board that results from making move (i, j) on the board.
     """
     turn = player(board)
+<<<<<<< HEAD
     # lst_board = []
     moves = action
     # Applies every possible move on the board
@@ -67,6 +68,17 @@ def result(board, action):
     
     # return lst_board
     return new_board
+=======
+    lst_board = []
+
+    # Applies every possible move on the board
+    for moves in action:
+        new_board = deepcopy(board)
+        new_board[moves[0]][moves[1]] = turn
+        lst_board.append(new_board)
+    
+    return lst_board
+>>>>>>> a32d3d43b84b7d3b109fded89e656e9d0d048e6f
 
 
 def winner(board):
