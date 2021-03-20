@@ -4,7 +4,7 @@
 
 ![tictactoe in-game](https://github.com/kenjidesu/Tic-Tac-Toe/blob/main/tictactoe.PNG)
 
-  Since Tic-Tac-Toe is a tie given optimal play by both sides, you should never be able to beat the AI (though if you don’t play optimally as well, it may beat you!)
+  Since *this* Tic-Tac-Toe is a tie given optimal play by both sides, you should never be able to beat the AI (though if you don’t play optimally as well, it may beat you!)
 
 ## Download
 
